@@ -1,1 +1,20 @@
+name: Upload Document Artifact
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Upload my document folder
+        uses: actions/upload-artifact@v4
+        with:
+          name: my-arti
+          path: .github/workflows/
 
